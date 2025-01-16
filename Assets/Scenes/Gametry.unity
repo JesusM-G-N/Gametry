@@ -218,7 +218,7 @@ GameObject:
   - component: {fileID: 989748104}
   - component: {fileID: 989748103}
   - component: {fileID: 989748106}
-  - component: {fileID: 989748105}
+  - component: {fileID: 989748107}
   m_Layer: 0
   m_Name: SpaceShip
   m_TagString: Untagged
@@ -293,20 +293,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &989748105
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 989748102}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 73c9c82f211733048a8ce0409f0ef413, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  movementSpeed: 2
-  Spaceship_transform: {fileID: 989748104}
 --- !u!114 &989748106
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -337,6 +323,22 @@ MonoBehaviour:
   m_DefaultActionMap: SpaceShip
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &989748107
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 989748102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73c9c82f211733048a8ce0409f0ef413, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movementSpeed: 5
+  Bulletprefab: {fileID: 68507695483059818, guid: 0c5ef6710b87a364e925ae838a1284b9, type: 3}
+  Meteorprefab: {fileID: 380183380339191314, guid: 32265438d3141df4a90f491b2272270b, type: 3}
+  maxMeteoritos: 3
 --- !u!1 &1131742066
 GameObject:
   m_ObjectHideFlags: 0
