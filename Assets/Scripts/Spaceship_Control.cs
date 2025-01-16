@@ -18,18 +18,17 @@ public class Spaceship_Control : MonoBehaviour
     [SerializeField] private GameObject Meteorprefab;
     private float xMax, yMax, xMin, yMin;
 
-    private int meteorCount = 0;  // Contador de meteoritos en pantalla
-    [SerializeField] private int maxMeteoritos = 3;  // Número máximo de meteoritos en pantalla
-
+    private int meteorCount = 0;  // Contador de meteoritos 
+    [SerializeField] private int maxMeteor = 3;  // Número máximo de meteoritos
     private void Start()
     {
         xMax = 10; yMax = 8; xMin = -10; yMin = 7;
-        InvokeRepeating("SpawnMeteor", 2f, 2f);  // Llamamos a SpawnMeteor repetidamente
-    }
+        InvokeRepeating("SpawnMeteor", 2f, 2f);  // Llamamos a SpawnMeteor
 
+    }
     private void Update()
     {
-        // Movimiento del jugador
+        // Movimiento de la Nave
         transform.position = new Vector3(Mathf.Clamp(transform.position.x, -10, 10), Mathf.Clamp(transform.position.y, -4.5f, 4.5f));
         transform.Translate(moveInput * Time.deltaTime * movementSpeed, Space.World);
 
@@ -52,7 +51,7 @@ public class Spaceship_Control : MonoBehaviour
     // Método que se llama para generar meteoritos
     private void SpawnMeteor()
     {
-        if (meteorCount < maxMeteoritos)  // Solo genera un meteorito si hay menos de 3
+        if (meteorCount < maxMeteor)  // Solo genera un meteorito si hay menos de maxMeteor
         {
             float randomX = Random.Range(xMax, xMin);
             float randomY = Random.Range(yMax, yMin);

@@ -4,22 +4,18 @@ using UnityEngine;
 
 public class Meteor : MonoBehaviour
 {
-    // Start is called before the first frame update
+    
     [SerializeField] private float rotationspeed;
     [SerializeField] private float meteorspeed;
+
+    // Movimiento y rotación de los meteoritos
     void Update()
     {
        transform.Rotate(0, 0, 1 * rotationspeed * Time.deltaTime);
 
-       transform.Translate(0, -1 * meteorspeed * Time.deltaTime, 0);
+       transform.Translate(0, -1 * meteorspeed * Time.deltaTime, 0, Space.World);
     }
-   
-
-
-
-    
-  
     
 }
-    // Update is called once per frame
+   
 
