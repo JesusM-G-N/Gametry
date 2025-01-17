@@ -18,7 +18,7 @@ public class Spaceship_Control : MonoBehaviour
     [SerializeField] private GameObject Meteorprefab;
     private float xMax, yMax, xMin, yMin;
 
-    private int meteorCount = 0;  // Contador de meteoritos 
+    public int meteorCount = 0;  // Contador de meteoritos 
     [SerializeField] private int maxMeteor = 3;  // Número máximo de meteoritos
     private void Start()
     {
@@ -48,10 +48,10 @@ public class Spaceship_Control : MonoBehaviour
         Instantiate(Bulletprefab, transform.position, transform.rotation);
     }
 
-    // Método que se llama para generar meteoritos
+    // Método para crear meteoritos
     private void SpawnMeteor()
     {
-        if (meteorCount < maxMeteor)  // Solo genera un meteorito si hay menos de maxMeteor
+        if (meteorCount < maxMeteor) 
         {
             float randomX = Random.Range(xMax, xMin);
             float randomY = Random.Range(yMax, yMin);
@@ -60,4 +60,19 @@ public class Spaceship_Control : MonoBehaviour
             meteorCount++;  // Aumenta el contador de meteoritos
         }
     }
+
+    // Método para generar nuevos meteoritos
+    public void DecreaseMeteorCount()
+    {
+        if (meteorCount > 0)
+        {
+            meteorCount--;  //Reduce el contador de meteoritos
+            SpawnMeteor();
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        Destroy(gameObject);
+    }   
 }
